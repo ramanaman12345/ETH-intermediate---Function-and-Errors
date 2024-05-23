@@ -7,27 +7,27 @@ contract errorhandlingmine{
     uint public count=0;
 
     function testRequire(uint amount) public{
-        require(amount > 895,"Amount must be greater than 895");
+        require(amount >297,"Amount must be greater than 297");
         count++;
     }
 
     function testRevert(uint amount) public {
-        if(!(amount > 895)){
-            revert("Amount must be greater than 895");
+        if(!(amount >297)){
+            revert("Amount must be greater than 297");
         }
         count++;
     }
 
     function testAssert(uint amount) public{
-        assert(amount > 895);
+        assert(amount >297);
         count++;
     }
 
     error CustomError(uint amount, string message);
 
     function testCustomError(uint amount) public{
-        if(amount <= 895){
-            revert CustomError(amount,"Amount must be greater than 895");
+        if(amount <=350){
+            revert CustomError(amount,"Amount must be greater than 350");
         }
         count++;
     }
